@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+	  body {
+		font-family: 'Pompiere', cursive;
+		font-size: 30px;
+		text-align: center;
+	  }
+	  
+      * {
+        box-sizing: border-box;
+      }
+      
+      #clock {
+		position: fixed;
+		z-index:3;
+		width: inherit;
+		text-align: center;
+		background-color: white;
+		border-style: double;
+	  }
+
+      .menu {
+        float: left;
+        width: 20%;
+      }
+
+      .menuitem {
+        padding: 8px;
+        margin-top: 7px;
+      }
+
+      .main {
+        float: left;
+        width: 60%;
+        padding: 0 20px;
+        overflow: hidden;
+      }
+
+      .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        padding-top: 100px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      
+      /* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 50px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+
+      @media only screen and (max-width:800px) {
+        .main {
+          width: 80%;
+          padding: 0;
+        }
+      }
+
+      @media only screen and (max-width:500px) {
+        .menu,
+        .main {
+          width: 100%;
+        }
+        #clock {
+			width: auto;
+		}
+      }
+      
+      /* buttons */
+		.custom-btn {
+		  width: 130px;
+		  height: 40px;
+		  padding: 10px 25px;
+		  font-family: 'Lato', sans-serif;
+		  font-weight: bold;
+		  background-color: lightgray;
+		  cursor: pointer;
+		  transition: all 0.3s ease;
+		  position: relative;
+		  display: inline-block;
+		}
+
+		.btn-7 {
+		  color: #000;
+		  line-height: 40px;
+		  padding: 0;
+		  border: none;
+		}
+		.btn-7 span {
+		  position: relative;
+		  display: block;
+		  width: 100%;
+		  height: 100%;
+		}
+		.btn-7:before,
+		.btn-7:after {
+		  position: absolute;
+		  content: "";
+		  right: 0;
+		  bottom: 0;
+		  background: #000;
+		  box-shadow: 0 0 5px #000;
+		  transition: all 0.3s ease;
+		}
+		.btn-7:before{
+		   height: 50%;
+		   width: 2px;
+		}
+		.btn-7:after {
+		  width: 20%;
+		  height: 2px;
+		}
+		.btn-7:hover:before {
+		  height: 100%;
+		}
+		.btn-7:hover:after {
+		  width: 100%;
+		}
+		.btn-7 span:before,
+		.btn-7 span:after {
+		  position: absolute;
+		  content: "";
+		  left: 0;
+		  top: 0;
+		  background: #000;
+		  box-shadow: 0 0 5px #000;
+		  transition: all 0.3s ease;
+		}
+		.btn-7 span:before {
+		  width: 2px;
+		  height: 50%;
+		}
+		.btn-7 span:after {
+		  height: 2px;
+		  width: 20%;
+		}
+		.btn-7 span:hover:before {
+		  height: 100%;
+		}
+		.btn-7 span:hover:after {
+		  width: 100%;
+		}
+		
+		table, td, th {
+		  border: 1px solid;
+		}
+
+		table {
+		  width: 100%;
+		  border-collapse: collapse;
+		}
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pompiere&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  </head>
+  <body>
+    <div style="overflow:auto">
+		
+      <div class="menu">
+        <div class="menuitem"></div>
+        <div class="menuitem" id="clock"></div>
+      </div>
+      
+      <div class="main">
+        <h2>Creacosm</h2>
+        
+        <p>Vous êtes dans un laboratoire de cosmétique secret, ultra-moderne et écologique, où sont créés les produits les plus innovants au monde. Un évènement de lancement d’un nouveau produit important pour la marque Créacosm est prévu et une erreur dans la formule du prototype du labo a entrainé la dégradation du produit de démonstration.</p>
+       
+        <p>Votre mission est de retrouver la formule cosmétique parfaite à partir de plantes avant que le temps ne s’écoule car vous êtes attendus pour une présentation officielle. Pour sortir du laboratoire, vous devez répondre aux questions.</p>
+        
+        <p>Cependant, une erreur dans une formule a créé une substance toxique qui va se répandre dans tout le bâtiment. Il faut sortir avant qu’il ne soit trop tard. TIK... TOK... TIK... TOK...</p>
+        <p></p>
+        
+        <img src="https://raw.githubusercontent.com/admane628/escapegame/refs/heads/main/images/periodic_hd.png" style="width:100%; border: 1px solid #000;">
+        <span>- Tableau périodique -</span><p></p>
+
+        <table>
+		  <tr>
+			<th>Nom ingrédient</th>
+			<th>Formule chimique</th>
+		  </tr>
+		</table>
+        <span>- Tableau d'affichage -</span><p></p>
+        
+        -----> <button class="custom-btn btn-7" onclick="getNext('about');"><span id="startgame">Commencer le jeu</span></button> <-----
+        
+        <p>Code du coffre: <span id="r0">_</span> <span id="r1">_</span> <span id="r2">_</span></p>
+        <button style="" id="coffre" class="custom-btn btn-7" onclick="getNext('final');"><span>Ouvrir le coffre</span></button>
+      </div>
+      
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content" id="modalcontent">
+		  <span class="close">&times;</span>
+          <div id="container" style="text-align: center"></div>
+        </div>
+      </div>
+      
+      <script>
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+		  modal.style.display = "none";
+		}
+        
+        var nom;
+        var donnees;
+        var ingredients;
+        var cbon = false;
+        
+        var question = "TEMP QUESTION ?";
+        var current_question_id = 0;
+        var answers = ["A1", "A2", "A3"];
+
+        function timer() {
+          let sMin = 10; // amount of minutes for timer
+          document.querySelector("#clock").innerHTML = `${sMin}:00`
+          let time = sMin * 60;
+          let countdown = setInterval(update, 1000);
+
+          function update() {
+            let min = Math.floor(time / 60);
+            let sec = time % 60;
+            sec = sec < 10 ? '0' + sec : sec;
+            document.querySelector("#clock").innerHTML = `${min}:${sec}`;
+            if (min == 0 && sec == 0) {
+              modal.style.display = "block";
+              span.style.display = "none";
+              container.innerHTML = `Temps écoulé ! Refreshez la page pour recommencer.`;
+            }
+            time--;
+            min == 0 && sec == 0 ? clearInterval(countdown) : countdown;
+          }
+        }
+        
+        function getRandomElements(arr, num) {
+			var shuffled = arr.sort(() => 0.5 - Math.random());
+			return shuffled.slice(0, num);
+		}
+		
+        function getDATA() {
+		  question = donnees[current_question_id].propriete;
+		  answers = getRandomElements(ingredients, 3);
+		  		  
+		  if(!answers.includes(donnees[current_question_id].nom_ingredient)){
+			answers[0] = donnees[current_question_id].nom_ingredient;
+		  }
+		  
+		  answers = answers.sort(() => 0.5 - Math.random())
+        }
+        
+        fetch("/data").then(res => res.json()).then(data => {
+		    console.log('GET DATA! ', data);
+		    donnees = data["data"];
+		    ingredients = data["ingredients"]
+		    getDATA();
+		    
+		    //fill tableau d'affichage
+		    donnees.forEach(function(i){
+				document.querySelector("table").innerHTML += `
+					<tr>
+						<td>${i.nom_ingredient}</td>
+						<td>${i.formuleChimique}</td>
+					  </tr>
+				`;
+			})
+		  }).catch(err => console.log(err));
+        
+        function checkAnswer(answer_clicked) {
+            // if answer is correct
+            if(answer_clicked.innerText == donnees[current_question_id].nom_ingredient){
+				
+				document.getElementById("a1").disabled = true;
+				document.getElementById("a2").disabled = true;
+				document.getElementById("a3").disabled = true;
+				
+				answer_clicked.style.backgroundColor = "lightgreen";
+				document.querySelector("#continuer").style.display = "inline-block";
+				document.querySelector(`#r${current_question_id}`).innerHTML = answer_clicked.innerText[0];
+				current_question_id++;
+				getDATA();
+			} else {
+				answer_clicked.style.backgroundColor = "lightcoral";
+			}
+            if(document.querySelector("#r2").innerText != "_"){
+				cbon = true;
+			}
+        }
+
+        function getNext(page) {
+			
+          var container = document.querySelector("#container");
+          
+          if (page == "about") {
+            modal.style.display = "block";
+            nom = 'Joueur'
+            document.querySelector("#startgame").innerHTML = "Continuer le jeu";
+            container.innerHTML = `
+					
+					<h3>About</h3>
+					<p>ahla hello hallo aloha hola <b>${nom}</b></p>
+					
+					<button class="custom-btn btn-7" onclick="getNext('game');"><span>Continuer</span></button>
+				`;
+          }
+          
+          if (page == "game") {
+            modal.style.display = "block";
+            if(cbon){
+				container.innerHTML = `
+					<h3>Vous avez términé !</h3>
+					<p>Clicker sur Terminer pour ouvrir le coffre !</p>
+					
+					<button class="custom-btn btn-7" onclick="getNext('close');"><span>Terminer</span></button>
+				`
+			} else {
+				container.innerHTML = `
+						
+						<h3>Répond au questions pour trouver le code</h3>
+						<p>${question}</p>
+						<button id="a1" class="custom-btn btn-7" onclick="checkAnswer(this)"><span>${answers[0]}</span></button>
+						<button id="a2" class="custom-btn btn-7" onclick="checkAnswer(this)"><span>${answers[1]}</span></button>
+						<button id="a3" class="custom-btn btn-7" onclick="checkAnswer(this)"><span>${answers[2]}</span></button>
+						<br>
+						<button id="continuer" style="display:none; margin:20px" class="custom-btn btn-7" onclick="getNext('game');"><span>Continuer</span></button>
+					`;
+				document.getElementById("a1").disabled = false;
+				document.getElementById("a2").disabled = false;
+				document.getElementById("a3").disabled = false;
+			}
+          }
+          
+          if (page == "close") {
+			modal.style.display = "none";
+		  }
+          
+          if (page == "final") {
+			if(cbon){
+				modal.style.display = "block";
+				span.style.display = "none";
+				document.querySelector("#clock").style.display = "none";
+				container.innerHTML = `
+					<h1>Félécitations !</h1>
+					<p>Vous avez résolu l'énigme. Le coffre est ouvert !</p>
+				`;
+				
+				confetti({
+				  particleCount: 300,
+				  spread: 100,
+				  origin: { y: 0.6 },
+				});
+				
+			} else {
+			  modal.style.display = "block";
+			  container.innerHTML = `
+					<p>Il faut répondre à toutes les questions pour ouvrir le coffre !</p>
+				`;
+			}
+		  }
+        }
+        
+        if(document.querySelector("#clock").innerHTML.length == 0){
+			timer();
+		}
+      </script>
+  </body>
+</html>
