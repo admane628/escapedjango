@@ -7,7 +7,7 @@
         "formuleChimique": "C21H22O10",
         "propriete": "Hydratant et apaisant"
       }
-    
+
     },
     {
       "model": "enigme3.ingredients",
@@ -15,11 +15,11 @@
       "fields" : {
         "nom_ingredient": "Beurre de Karité",
         "formuleChimique": "C57H104O6",
-        "propriete": "Nourrissant et réparateur"
+        "propriete": "Je proviens d’une noix africaine et hydrate intensément"
       }
     },
     {
-      "model": "enigme3.ingredients", 
+      "model": "enigme3.ingredients",
       "id_ingredient": 3,
       "fields" :{
         "nom_ingredient": "Huile d'Argan",
@@ -39,7 +39,7 @@
 
     },
     {
-      "model": "enigme3.ingredients",  
+      "model": "enigme3.ingredients",
       "id_ingredient": 5,
       "fields" :{
         "nom_ingredient": "Huile de Jojoba",
@@ -49,17 +49,17 @@
 
     },
     {
-      "model": "enigme3.ingredients",  
+      "model": "enigme3.ingredients",
       "id_ingredient": 6,
       "fields" :{
-        "nom_ingredient": "Vitamine E",
+        "nom_ingredient": "Vitamine C",
         "formuleChimique": "C29H50O2",
-        "propriete": "Antioxydant"
+        "propriete": "Je suis un antioxydant puissant, souvent extrait d’agrumes"
       }
 
     },
     {
-      "model": "enigme3.ingredients",  
+      "model": "enigme3.ingredients",
       "id_ingredient": 7,
       "fields" :{
         "nom_ingredient": "Collagène",
@@ -69,133 +69,23 @@
 
     },
     {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 8,
-      "fields" :{
-        "nom_ingredient": "Acide Hyaluronique",
-        "formuleChimique": "(C14H21NO11)n",
-        "propriete": "Hydratant et repulpant"
-      }
-     
-    },
-    {
-      "model": "enigme3.ingredients",  
+      "model": "enigme3.ingredients",
       "id_ingredient": 9,
       "fields" :{
-        "nom_ingredient": "Huile de Rose Musquée",
+        "nom_ingredient": "Acide Hyaluronique",
         "formuleChimique": "C18H30O2",
-        "propriete": "Cicatrisant et anti-âge"
+        "propriete": "Je retiens l’humidité dans la peau comme une éponge"
       }
-      
+
     },
     {
-      "model": "enigme3.ingredients",  
+      "model": "enigme3.ingredients",
       "id_ingredient": 10,
       "fields" :{
         "nom_ingredient": "Beurre de Cacao",
         "formuleChimique": "C57H104O6",
         "propriete": "Nourrissant et protecteur"
       }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 11,
-      "fields" :{
-        "nom_ingredient": "Extrait de Thé Vert",
-        "formuleChimique": "C22H18O11",
-        "propriete": "Antioxydant et tonifiant"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 12,
-      "fields" :{
-        "nom_ingredient": "Huile de Coco",
-        "formuleChimique": "C12H24O2",
-        "propriete": "Hydratant et antibactérien"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 13,
-      "fields" :{
-        "nom_ingredient": "Panthénol",
-        "formuleChimique": "C9H19NO4",
-        "propriete": "Hydratant et réparateur"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients", 
-      "id_ingredient": 14,
-      "fields" :{
-        "nom_ingredient": "Huile d'Amande Douce",
-        "formuleChimique": "C18H34O2",
-        "propriete": "Adoucissant et nourrissant"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 15,
-      "fields" :{
-        "nom_ingredient": "Argile Verte",
-        "formuleChimique": "Al2Si2O5(OH)4",
-        "propriete": "Purifiant et absorbant"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients", 
-      "id_ingredient": 16,
-      "fields" :{
-        "nom_ingredient": "Propolis",
-        "formuleChimique": "C15H12O5",
-        "propriete": "Antiseptique et cicatrisant"
-      }
-     
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 17,
-      "fields" :{
-        "nom_ingredient": "Glycérine",
-        "formuleChimique": "C3H8O3",
-        "propriete": "Hydratant et humectant"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients", 
-      "id_ingredient": 18,
-      "fields" :{
-        "nom_ingredient": "Acide Lactique",
-        "formuleChimique": "C3H6O3",
-        "propriete": "Exfoliant doux et hydratant"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 19,
-      "fields" :{
-        "nom_ingredient": "Céramides",
-        "formuleChimique": "C34H66NO3",
-        "propriete": "Renforce la barrière cutanée"
-      }
-      
-    },
-    {
-      "model": "enigme3.ingredients",  
-      "id_ingredient": 20,
-      "fields" :{
-        "nom_ingredient": "Niacinamide",
-        "formuleChimique": "C6H6N2O",
-        "propriete": "Anti-inflammatoire et éclaircissant"
-      }
-      
+
     }
 ]
