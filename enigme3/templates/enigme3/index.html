@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creacosm Escape Game</title>
     <style>
 	  body {
 		font-family: 'Pompiere', cursive;
@@ -235,7 +236,13 @@
 		  modal.style.display = "none";
 		}
         
-        var nom;
+        
+        const currentUrl = window.location.href;
+		const url = new URL(currentUrl);
+		const params = new URLSearchParams(url.search);
+		var nom = params.get('nom');
+        if(nom == null) {nom=""}
+        
         var donnees;
         var ingredients;
         var cbon = false;
@@ -258,7 +265,10 @@
             if (min == 0 && sec == 0) {
               modal.style.display = "block";
               span.style.display = "none";
-              container.innerHTML = `Temps écoulé ! Refreshez la page pour recommencer.`;
+              container.innerHTML = `
+				  Temps écoulé ! Refreshez la page pour recommencer.<br>
+				  <button class="custom-btn btn-7" onclick="location.reload();"><span>Rejouer</span></button>
+              `;
             }
             time--;
             min == 0 && sec == 0 ? clearInterval(countdown) : countdown;
@@ -325,12 +335,13 @@
           
           if (page == "about") {
             modal.style.display = "block";
-            nom = 'Joueur'
             document.querySelector("#startgame").innerHTML = "Continuer le jeu";
             container.innerHTML = `
 					
-					<h3>About</h3>
+					<h3>À propos</h3>
 					<p>ahla hello hallo aloha hola <b>${nom}</b></p>
+					
+					<p>Choisissez la bonne réponse pour ouvrir le coffre !</p>
 					
 					<button class="custom-btn btn-7" onclick="getNext('game');"><span>Continuer</span></button>
 				`;
@@ -348,7 +359,7 @@
 			} else {
 				container.innerHTML = `
 						
-						<h3>Répond au questions pour trouver le code</h3>
+						<h3>Répondez aux questions pour trouver le code :</h3>
 						<p>${question}</p>
 						<button id="a1" class="custom-btn btn-7" onclick="checkAnswer(this)"><span>${answers[0]}</span></button>
 						<button id="a2" class="custom-btn btn-7" onclick="checkAnswer(this)"><span>${answers[1]}</span></button>

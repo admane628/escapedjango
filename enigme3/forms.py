@@ -8,5 +8,5 @@ class JoueurForm(ModelForm):
         model= Joueur
         fields = ["nom"]
         labels= {
-            "nom" : "nom du joueur"
+            "nom" : "Nom du joueur"
         }
